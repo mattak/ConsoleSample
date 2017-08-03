@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace App
 {
@@ -6,7 +8,9 @@ namespace App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var dictionary = new Dictionary<string, string>() {{"message", "Hello World!"}};
+            var serialized = JsonConvert.SerializeObject(dictionary);
+            Console.WriteLine(serialized);
         }
     }
 }
